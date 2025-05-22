@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Download, Eye, FileText, Printer } from "lucide-react";
+import { Download, Eye } from "lucide-react";
 import ReceiptViewer from "./ReceiptViewer";
 
 // Define a client type for demo purposes
@@ -84,7 +84,7 @@ const ReceiptList: React.FC = () => {
   };
 
   // Download receipt
-  const handleDownloadReceipt = (receiptId: string) => {
+  const handleDownloadReceipt = () => {
     // In a real app, this would generate and download a PDF
     alert("This would download a PDF receipt in a real application.");
   };
@@ -154,7 +154,7 @@ const ReceiptList: React.FC = () => {
                     variant="outline" 
                     size="sm"
                     className="flex items-center gap-1"
-                    onClick={() => handleDownloadReceipt(receipt.id)}
+                    onClick={() => handleDownloadReceipt()}
                   >
                     <Download className="h-4 w-4" />
                     {receipt.format === "pdf" ? "Download" : "Export"}
